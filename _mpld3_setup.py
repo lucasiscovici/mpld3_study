@@ -18,13 +18,13 @@ except:
 
 
 SUBMODULES = ['mplexporter']
-SUBMODULE_SYNC_PATHS = [('mplexporter/mplexporter', 'mpld3-study/mplexporter')]
+SUBMODULE_SYNC_PATHS = [('mplexporter/mplexporter', 'mpld3_study/mplexporter')]
 
 
 def get_version():
     """Get the version info from the mpld3 package without importing it"""
-    with open(os.path.join("mpld3-study", "__about__.py"), "r") as init_file:
-        exec(compile(init_file.read(), 'mpld3-study/__about__.py', 'exec'), globals())
+    with open(os.path.join("mpld3_study", "__about__.py"), "r") as init_file:
+        exec(compile(init_file.read(), 'mpld3_study/__about__.py', 'exec'), globals())
     try:
         return __version__
     except NameError:
@@ -223,7 +223,7 @@ def check_js_build_status(version, root=None, srcdir=None):
         return
 
     # these are the built javascript libraries
-    js_libs = [os.path.join(root, "mpld3-study", "js", lib.format(version))
+    js_libs = [os.path.join(root, "mpld3_study", "js", lib.format(version))
                for lib in ('mpld3.v{0}.js', 'mpld3.v{0}.min.js')]
 
     # if the js libraries don't exist, then throw an error
