@@ -11,7 +11,7 @@ from _mpld3_setup import (require_clean_submodules, UpdateSubmodules,
 
 DESCRIPTION = "D3 Viewer for Matplotlib"
 LONG_DESCRIPTION = open('README.md').read()
-NAME = "mpld3"
+NAME = "mpld3-study"
 AUTHOR = "Jake VanderPlas"
 AUTHOR_EMAIL = "jakevdp@cs.washington.edu"
 MAINTAINER = "Jake VanderPlas"
@@ -43,10 +43,10 @@ setup(name=NAME,
       license=LICENSE,
       cmdclass={'submodule': UpdateSubmodules,
                 'buildjs': BuildJavascript},
-      packages=['mpld3',
-                'mpld3/mplexporter',
-                'mpld3/mplexporter/renderers'],
-      package_data={'mpld3': ['js/*.js']},
+      packages=['mpld3-study',
+                'mpld3-study/mplexporter',
+                'mpld3-study/mplexporter/renderers'],
+      package_data={'mpld3-study': ['js/*.js']},
       classifiers=[
           'Development Status :: 4 - Beta',
           'Environment :: Console',
