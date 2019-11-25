@@ -1,5 +1,5 @@
 {
-  "name": "mpld3",
+  "name": "mpld3_study",
   "version": "0.0.0",
   "description": "D3 Viewer for Matplotlib",
   "main": "index.js",
