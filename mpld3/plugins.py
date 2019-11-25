@@ -608,7 +608,16 @@ class InteractiveLegendPlugin(PluginBase):
                                                 (d.visible ? current_alpha : current_alpha_unsel))
                         .style("fill-opacity", is_over ? current_alpha_over :
                                                 (d.visible ? current_alpha : current_alpha_unsel));
-                } else{
+                } else if(type=="mpld3_Path"){
+                    var current_alpha = d.mpld3_elements[i].props.alpha;
+                    var current_alpha_unsel = current_alpha * alpha_unsel;
+                    var current_alpha_over = current_alpha * alpha_over;
+                    d3.select(d.mpld3_elements[i].path[0][0])
+                        .style("stroke-opacity", is_over ? current_alpha_over :
+                                                (d.visible ? current_alpha : current_alpha_unsel))
+                        .style("fill-opacity", is_over ? current_alpha_over :
+                                                (d.visible ? current_alpha : current_alpha_unsel))
+                 }else{
                     console.log(type + " not yet supported");
                 }
             }
@@ -624,6 +633,8 @@ class InteractiveLegendPlugin(PluginBase):
             } else if((type=="mpld3_PathCollection")||
                       (type=="mpld3_Markers")){
                 color = d.mpld3_elements[0].props.facecolors[0];
+            } else if(type=="mpld3_Path"){
+                color = d.mpld3_elements[0].props.facecolor;
             } else{
                 console.log(type + " not yet supported");
             }
