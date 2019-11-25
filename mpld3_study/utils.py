@@ -12,7 +12,7 @@ from functools import wraps
 from . import urls
 
 # Make sure that DeprecationWarning gets printed
-warnings.filterwarnings('always', category=DeprecationWarning, module='mpld3')
+warnings.filterwarnings('always', category=DeprecationWarning, module='mpld3_study')
 
 
 def html_id_ok(objid, html5=False):
